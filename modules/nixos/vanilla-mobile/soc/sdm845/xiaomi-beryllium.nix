@@ -98,13 +98,6 @@ in
       };
     };
 
-    services.udev.extraRules = ''
-      # Accelerometer mount matrix for iio-sensor-proxy. This shouldn't be needed any more
-      # due to the Beryllium firmware patch, but `/sys/bus/iio/devices/iio:deviceX/in_accel_mount_matrix`
-      # isn't populating.
-      SUBSYSTEM=="misc", KERNEL=="fastrpc-*", ENV{ACCEL_MOUNT_MATRIX}+="-1, 0, 0; 0, -1, 0; 0, 0, -1"
-    '';
-
     services.q6voiced.settings = {
       q6voice_card = 0;
       q6voice_device = 4;
