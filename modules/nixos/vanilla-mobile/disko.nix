@@ -1,6 +1,7 @@
 self:
 {
   config,
+  options,
   lib,
   pkgs,
   ...
@@ -56,6 +57,9 @@ in
       imageFormat = "raw";
       # Our kernels don't have all the modules required for virtualization.
       kernelPackages = pkgs.linuxPackages;
+    }
+    # Only exists in the disko fork the docs point to.
+    // lib.optionalAttrs (options.disko.imageBuilder ? useVirtualDevices) {
       useVirtualDevices = false;
     }
     // lib.optionalAttrs (cfg.imageBuildSystem != pkgs.stdenv.buildPlatform.system) {
