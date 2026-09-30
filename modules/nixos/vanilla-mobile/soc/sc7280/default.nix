@@ -127,6 +127,7 @@ in
         services.rmtfs.enable = true;
         services.tqftpserv.enable = true;
         services.msm-modem-uim-selection.enable = true;
+        services.modem-gnss.enable = true;
 
         networking.modemmanager.enable = true;
       })
