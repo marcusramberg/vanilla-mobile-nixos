@@ -22,12 +22,33 @@
 # - Time to build! Good luck!!
 {
   lib,
-  linuxKernel,
+  fetchurl,
+  buildLinux,
+  kernelPatches,
   stdenv,
   ...
 }:
 let
-  kernel = linuxKernel.kernels.linux_7_1;
+  # SDM845 isn't updated past Linux 7.1 yet.
+  kernel =
+    let
+      version = "7.1.13";
+    in
+    buildLinux {
+      src = fetchurl {
+        url = "mirror://kernel/linux/kernel/v${lib.versions.major version}.x/linux-${version}.tar.xz";
+        hash = "sha256:1mqshj3ldn0md1c0am35skznnq5vmz3fvrr0cqmwwp6bzpx9akb1";
+      };
+      inherit version;
+      isLTS = false;
+      modDirVersion = lib.versions.pad 3 version;
+      extraMeta.branch = "7.1";
+
+      kernelPatches = [
+        kernelPatches.bridge_stp_helper
+        kernelPatches.request_key_helper
+      ];
+    };
   version = "${kernel.version}-sdm845";
 in
 kernel.override {
