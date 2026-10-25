@@ -26,5 +26,4 @@ in
   swclock-offset = callPackage ./swclock-offset { };
   usb-moded = callPackage ./usb-moded { };
   usb-moded-notify = callPackage ./usb-moded-notify { };
-  q6voiced = callPackage ./q6voiced { };
 }
