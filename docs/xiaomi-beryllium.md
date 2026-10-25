@@ -12,7 +12,7 @@ Before installing Linux on the POCO F1:
 
 - Your device's bootloader needs to be unlocked. If it's unlocked, it will say so during
   the boot process. To unlock the bootloader, follow [these](https://wiki.lineageos.org/devices/beryllium/install/#unlocking-the-bootloader) instructions.
-- Note down your device's touchscreen variant. You can find this out by following [these](https://wiki.postmarketos.org/wiki/Xiaomi_POCO_F1_(xiaomi-beryllium)#Know_your_touchscreen_variant) instructions.
+- Note down your device's touchscreen variant. You can find this out by following [these](https://wiki.nura.eco/wiki/Xiaomi_POCO_F1_(xiaomi-beryllium)#Know_your_touchscreen_variant) instructions.
 - Update your device's firmware following [these](https://wiki.lineageos.org/devices/beryllium/fw_update) instructions.
 
 ### Installing NixOS
@@ -198,7 +198,7 @@ Once you've created your starter config, just send it over SSH and reboot:
 ## Troubleshooting
 
 - Trouble connecting to WiFi?
-  - See [here](https://wiki.postmarketos.org/wiki/Xiaomi_POCO_F1_(xiaomi-beryllium)#WiFi) for common causes.
+  - See [here](https://wiki.nura.eco/wiki/Xiaomi_POCO_F1_(xiaomi-beryllium)#WiFi) for common causes.
     The 5Gz issue, can be fixed in declarative Nix NetworkManager configurations
     with `ensureProfiles.profiles.<PROFILE>.wifi.band = "bg";`.
 - Your phone may occasionally freeze with a kernel panic while booting. Just hold

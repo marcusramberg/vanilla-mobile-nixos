@@ -27,7 +27,7 @@ been done on U-Boot to allow going from the Android bootloader to a UEFI environ
 
 The main thing that's needed for most devices is U-Boot and kernel/drivers support.
 Below is a list of what's already in this repository. For other devices, start with
-looking at the [postmarketOS Wiki](https://wiki.postmarketos.org/wiki/Devices) and [this](https://gitlab.postmarketos.org/tauchgang/tauchgang-ci/-/blob/main/devices.toml)
+looking at the [Nura Wiki](https://wiki.nura.eco/wiki/Devices) and [this](https://gitlab.postmarketos.org/tauchgang/tauchgang-ci/-/blob/main/devices.toml)
 list of devices supported by Tauchgang U-Boot.
 Many of the devices that work best for mobile Linux are older devices you can buy
 secondhand.
@@ -60,5 +60,5 @@ See the instructions linked in [the devices list](#what-devices-are-supported) a
 
 ## Acknowledgements
 
-- [postmarketOS](https://postmarketos.org/). Their community is doing incredible work continually pushing things forward for everyone.
+- [Nura](https://nura.eco/). Their community is doing incredible work continually pushing things forward for everyone.
 - [chayleaf](https://pavluk.org/). They made [a detailed blog post](https://pavluk.org/blog/2023/12/19/oneplus_6.html) on doing this with their OnePlus 6 that I wish I found sooner.
