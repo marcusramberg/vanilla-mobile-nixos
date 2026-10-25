@@ -52,7 +52,6 @@ in
           "qcom_spmi_haptics"
         ];
 
-        systemd.enable = true;
         systemd.storePaths =
           map
             (fw: {

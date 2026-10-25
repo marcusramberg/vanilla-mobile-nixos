@@ -70,7 +70,6 @@ in
             ]
         );
 
-        systemd.enable = true;
         systemd.storePaths =
           map
             (fw: {
