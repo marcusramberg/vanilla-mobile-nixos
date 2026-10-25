@@ -58,25 +58,30 @@ Here's a simple example of that for flakes:
     # Don't set `inputs.nixpkgs.follows`, to avoid cache misses.
     vanilla-mobile-nixos.url = "github:vanilla-mobile-nixos/vanilla-mobile-nixos";
     disko = {
-      # Use disko fork until this PR is merged:
-      # <https://github.com/nix-community/disko/pull/1008>
-      url = "github:JuneStepp/disko/mobile";
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, vanilla-mobile-nixos, disko, ... }: {
-    # Create a NixOS configuration for `xiaomi-beryllium`.
-    nixosConfigurations.xiaomi-beryllium = nixpkgs.lib.nixosSystem {
-      modules = [
-        # Import the `vanilla-mobile` module.
-        vanilla-mobile-nixos.nixosModules.vanilla-mobile
-        # Import the `disko` module.
-        disko.nixosModules.disko
-        # Import the example config.
-        ./hosts/xiaomi-beryllium/configuration.nix
-      ];
+  outputs =
+    {
+      nixpkgs,
+      vanilla-mobile-nixos,
+      disko,
+      ...
+    }:
+    {
+      # Create a NixOS configuration for `xiaomi-beryllium`.
+      nixosConfigurations.xiaomi-beryllium = nixpkgs.lib.nixosSystem {
+        modules = [
+          # Import the `vanilla-mobile` module.
+          vanilla-mobile-nixos.nixosModules.vanilla-mobile
+          # Import the `disko` module.
+          disko.nixosModules.disko
+          # Import the example config.
+          ./hosts/xiaomi-beryllium/configuration.nix
+        ];
+      };
     };
-  };
 }
 ```
 
