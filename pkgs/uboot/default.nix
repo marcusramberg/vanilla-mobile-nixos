@@ -57,6 +57,15 @@ in
     uboot = ubootPackages.oneplus-enchilada;
   };
 
+  oneplus-fajita = buildTauchgangUBoot {
+    pname = "oneplus-fajita";
+    dtb = "qcom/sdm845-oneplus-fajita";
+    defconfig = "qcom_defconfig qcom-phone.config";
+  };
+  oneplus-fajita-boot-image = mkAndroidBootImage {
+    uboot = ubootPackages.oneplus-fajita;
+  };
+
   fairphone-fp5 = buildTauchgangUBoot {
     pname = "fairphone-fp5";
     dtb = "qcom/qcm6490-fairphone-fp5";
